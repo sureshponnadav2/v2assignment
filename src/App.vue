@@ -1,15 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <zip-details></zip-details>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import ZipDetails from './components/ZipDetails.vue';
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ZipDetails
   }
 }
 </script>
