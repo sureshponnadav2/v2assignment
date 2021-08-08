@@ -1,0 +1,13 @@
+   //   ************************
+    //   API Call
+    // displayData() {
+    //   axios.get(
+    //     "https://api.zip-codes.com/ZipCodesAPI.svc/1.0/QuickGetZipCodeDetails/90001?key=DEMOAPIKEY"
+    //   ).then(res => {
+    //       console.log(res.data)
+    //       this.detailsData = res.data
+    //         })
+    //   .catch(err => {
+    //       console.log(err);
+    //   })
+    // },
