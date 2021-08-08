@@ -44,6 +44,7 @@
     <button type="button" v-on:click="string(inputString)">Click</button>
     
   <h5> {{ revSentence }}</h5>
+  <h5> {{ strError }}</h5>
     </div>
 
   </div>
@@ -58,6 +59,7 @@ export default {
       name: "suresh!!!",
       inputZipValue: "",
       error: "",
+      strError: "",
       cityName: "",
       StateName: "",
       counter: 0,
@@ -101,10 +103,16 @@ export default {
       this.counter = this.counter - 1;
     },
     string(arg) {
-      this.inputString = arg;
+        this.inputString = arg;
+      if( arg == ''){
+        this.strError = `Invalid  Input`
+      }else{
+       //  this.inputString = arg;
       let revWords = arg.split(" ").reverse().join(" ");
       console.log(revWords);
       this.revSentence = revWords;
+      }
+     
 
     },
    
