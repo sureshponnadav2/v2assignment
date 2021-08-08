@@ -1,32 +1,37 @@
 <template>
   <div class="container">
     <!-- find city and state -->
+<div class="col">
+      <h2>Find City & State</h2>
 
-    <h2>Find City & State</h2>
-
-    <label for="input">Enter ZipCode:</label>
+    <label for="input">Enter ZipCode: </label>
     <input
       type="text"
       name="inputValue"
       id="zip"
       @keyup.enter="getData()"
       v-model="inputZipValue"
-    /><br /><br />
-    <button type="button" v-on:click="getData()">Get Data</button><br /><br />
+    />
+    <button type="button" v-on:click="getData()">Get Data</button>
     <h5>{{ StateName }}</h5>
     <h5>{{ cityName }}</h5>
     <h5>{{ error }}</h5>
+</div>
+
 
     <!-- increment and decrement -->
-
-    <h2>Increment and Decrement</h2>
+<div class="col increment-block">
+      <h2>Increment and Decrement</h2>
     <h3>Counter: {{ counter }}</h3>
     <button type="button" v-on:click="increment()">increment</button>
 
     <button type="button" v-on:click="decrement()">decrement</button>
+</div>
+
 
     <!-- reverse the words in the Sentence -->
-    <h2>reverse the words in the Sentence</h2>
+    <div class="col">
+          <h2>reverse the words in the Sentence</h2>
     Enter Sting:
     <input
       @keyup.enter="string(inputString)"
@@ -35,14 +40,12 @@
       name="inputString"
       id="inputString"
     />
-    <br /><br />
+    
     <button type="button" v-on:click="string(inputString)">Click</button>
-    <br /><br />
-    {{ revSentence }}
+    
+  <h5> {{ revSentence }}</h5>
+    </div>
 
-    <!-- Div Section assignment -->
-    <h1>Div Section assignment</h1>
-    <button type="button" v-on:click="htmlCss()">Click Me</button>
   </div>
 </template>
 
@@ -99,30 +102,66 @@ export default {
     },
     string(arg) {
       this.inputString = arg;
-      let collectrevString = [];
-      // let revWords = arg.split(" ").reverse().join(" ");
-      // // console.log(revWords);
-      // this.revSentence = revWords;
-      let len = arg.length;
-      //console.log(this.inputString)
-      for (let i = len - 1; i >= 0; i--) {
-              
-        if(arg[i] == ' '){
-          var revValStr = collectrevString.reverse().join('');
-        }
-         collectrevString.push(arg[i]);
-       
-      }
+      let revWords = arg.split(" ").reverse().join(" ");
+      console.log(revWords);
+      this.revSentence = revWords;
 
-     console.log(revValStr);
     },
-    htmlCss() {
-      console.log(this.createDiv[0].height);
-      // JSON.stringify(filters);
-    },
-  },
+   
+  }
 };
 </script>
 
 <style scoped>
+.container{
+display: flex;
+    margin: 20px;
+    background: #fbfbfb;
+   padding: 42px 22px;
+    border-radius: 28px;
+    box-shadow: 0 0 7px 2px #aeb1b3;
+}
+.container button {
+    padding: 12px;
+    font-weight: 400;
+    border: 1px solid #f44336;
+    background: #f44336;
+    color: #fff;
+    margin-right: 22px;
+    text-transform: uppercase;
+    border-radius: 7px;
+}
+.container button:hover {
+    background: transparent;
+        cursor: pointer;
+    color: #f44336;
+}
+input:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 3px #f44336;
+    border: 0px solid;
+}
+.container input {
+   padding: 10px 10px;
+    border-radius: 5px;
+    width: 60%;
+    border: 1px solid #f44336;
+    margin-bottom: 14px;
+}
+.col {
+    text-align: center;
+}
+.container .col {
+    width: 100%;
+}
+.container h2 {
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: capitalize;
+    text-align: center;
+}
+.increment-block h3{
+  margin-bottom: 26px;
+}
+
 </style>
