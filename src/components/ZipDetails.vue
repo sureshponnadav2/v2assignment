@@ -130,7 +130,7 @@ display: flex;
     box-shadow: 0 0 7px 2px #aeb1b3;
 }
 .container button {
-    padding: 12px;
+   padding: 9px 14px;
     font-weight: 400;
     border: 1px solid #f44336;
     background: #f44336;
@@ -164,12 +164,16 @@ input:focus-visible {
 }
 .container h2 {
     font-weight: 500;
-    font-size: 20px;
+    font-size: 17px;
     text-transform: capitalize;
     text-align: center;
 }
 .increment-block h3{
   margin-bottom: 26px;
 }
-
+@media(max-width:800px){
+  .container {
+    flex-wrap: wrap;
+}
+}
 </style>
